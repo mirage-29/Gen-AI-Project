@@ -61,7 +61,60 @@ if submit:
     response=get_gemini_response(question,prompt)
     print(response)
     response=read_sql_query(response,"student.db")
-    st.subheader("The Response is")
+    st.subheader("Here is the found response :")
     for row in response:
         print(row)
         st.header(row)
+        
+
+st.markdown(
+    """
+    <style>
+    .st-ae{
+        height:100px;
+    }
+    .st-ae:hover{
+        height:110px;
+        shadow:2 2 10px #000000;    
+    }
+    #the-response-is{
+        color:#1fed7c;
+        font-size:30px;
+        font-weight:bold;  
+    }
+    .stApp {
+        background-image: url("https://www.skyweaver.net/images/media/wallpapers/wallpaper2.jpg");
+       
+        background-size: cover;
+        color: #ff0000;
+    }
+    .stTextInput>div>div>input {
+        background-color: #000000;
+        }
+    
+    #gemini-app-to-retrieve-sql-data{
+        color: #ff0000;
+        font-size: 40px;
+        font-weight: bold;
+    } 
+    .stButton>button {
+        background-color: #000000;
+        color: white;
+        border-radius: 10px;
+    }
+    
+    .stHeading h2{
+        color: #add618;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .stButton>button:hover {
+        background-color: #ff0000;
+        shadow: 2 2 10px #000000;
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
+        
